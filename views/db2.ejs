@@ -1,0 +1,8 @@
+  <table>
+    <tr><th>ID</th><th>駅コード</th><th>駅名</th></tr>
+      <% for( let row of data ) { %>
+        <tr><td><%= row.id %></td>
+        <td><%= row.code %></td>
+        <td><%= row.name %></td></tr>
+      <% } %>
+  </table>
