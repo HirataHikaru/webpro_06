@@ -1,0 +1,10 @@
+  <h2>好きなゲーム一覧</h2>
+  <table>
+    <tr><th>ID</th><th>タイトル</th><th>ジャンル</th><th>発売年</th></tr>
+      <% for( let row of data ) { %>
+        <tr><td><%= row.id %></td>
+        <td><%= row.title %></td>
+        <td><%= row.genre %></td>
+        <td><%= row.year %></td></tr>
+      <% } %>
+  </table>

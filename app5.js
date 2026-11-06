@@ -16,6 +16,7 @@ app.get("/keiyo", (req, res) => {
   // 本来ならここにDBとのやり取りが入る
     res.render('db2', { data: station });
 });
+
 app.get("/keiyo_add", (req, res) => {
   let id = req.query.id;
   let code = req.query.code;
@@ -24,6 +25,17 @@ app.get("/keiyo_add", (req, res) => {
   station.push( newdata );
     res.render('db1', { data: station });;
 });
+
+let game = [
+  { id:1, title:"マリオカート8", genre:"レース", year:2017 },
+  { id:2, title:"スプラトゥーン3", genre:"シューティング", year:2022 },
+  { id:3, title:"ゼルダの伝説 ティアキン", genre:"アクション", year:2023 },
+];
+
+app.get("/game", (req, res) => {
+  res.render('game', { data: game });
+});
+
 app.get("/hello1", (req, res) => {
   const message1 = "Hello world";
   const message2 = "Bon jour";
