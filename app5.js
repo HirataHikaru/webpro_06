@@ -36,6 +36,17 @@ app.get("/game", (req, res) => {
   res.render('game', { data: game });
 });
 
+app.get("/game_add", (req, res) => {
+  let id = req.query.id;
+  let title = req.query.title;
+  let genre = req.query.genre;
+  let year = req.query.year;
+  let newdata = { id: id, title: title, genre: genre, year: year };
+  game.push( newdata );
+   // 手間がかかるため，登録後は入力画面に戻す方が良いと判断した．
+  res.redirect('/public/game_add.html');
+});
+
 app.get("/hello1", (req, res) => {
   const message1 = "Hello world";
   const message2 = "Bon jour";
